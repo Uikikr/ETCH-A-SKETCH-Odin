@@ -10,16 +10,16 @@ function createDiv() {
         div.className = 'numOne';
         const divStyle = div.style;
         divStyle.backgroundColor = 'white';
-        divStyle.height = '50px';
-        divStyle.width = '50px';
-        divStyle.border = '1px';
+        divStyle.height = '25px';
+        divStyle.width = '25px';
+        divStyle.border = '1px, "solid", "black"';
         document.getElementById('wrap').appendChild(div);
     }
 };
 
 const wrapperStyle = wrap.style;
-wrapperStyle.height = '800px';
-wrapperStyle.width = '800px';
+wrapperStyle.height = '432px';
+wrapperStyle.width = '432px';
 wrapperStyle.display = 'flex';
 wrapperStyle.flexDirection = 'row';
 wrapperStyle.flexWrap = 'wrap';
