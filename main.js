@@ -40,13 +40,17 @@ function mouseUpp() {
     createDiv(pNumber);
 }
 
-document.addEventListener('mouseover', function (e) {
+function mouseOvver(e, color = 'RGB(0, 0, 0)') {
     const div = e.target;
     if (div.className === 'numOne') {
-        div.style.backgroundColor = 'black'
+        div.style.backgroundColor = color
     }
-});
+};
 
-document.getElementById('button1').onmouseup = function () {
+document.getElementById('wrap').onmouseover = function(e) {
+    mouseOvver(e)
+}
+
+document.getElementById('button1').onmouseup = function() {
     mouseUpp()
 }
