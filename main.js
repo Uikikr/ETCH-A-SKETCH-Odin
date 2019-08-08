@@ -55,10 +55,9 @@ function mouseOvver(e, color = 'RGB'+'(0, 0, 0)') {
 };
 
 function changeColor() {
-    let rColor = 'RGB'+(Math.floor(Math.random()*250), Math.floor(Math.random()*250), Math.floor(Math.random()*250));
+    let rColor = 'RGB' + '('(Math.floor(Math.random()*250) + ',' + Math.floor(Math.random()*250) + ',' + Math.floor(Math.random()*250)) + ')';
     mouseOvver(rColor);
     console.log(mouseOvver());
-
 };
 
 document.getElementById('wrap').onmouseover = function(e) {
