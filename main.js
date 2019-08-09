@@ -22,23 +22,21 @@ function createDiv(width = 16) {
     wrapperStyle.flexDirection = 'row';
     wrapperStyle.flexWrap = 'wrap';
     wrapperStyle.border = 'solid';
+    wrapperStyle.margin = 'auto';
 };
 
-let divH = document.getElementsByClassName('numOne');
-
 function createButton() {
-    for (i = 0; i < 2; i++) {
-        let bottun = document.createElement('button');
-        document.getElementById('body').appendChild(bottun);
+    const buttonText = ['Change size', 'Random color'];
+
+    buttonText.forEach( (text, i) => {
+        const bottun = document.createElement('button');
         bottun.id = 'button'+i;
-    };
-    //const bottun = document.createElement('button');
-    let t = document.createTextNode('Change size');
-    let t2 = document.createTextNode('Random color')
-    
-    document.getElementById('button0').appendChild(t);
-    document.getElementById('button1').appendChild(t2);
-}
+        bottun.className = 'bClick'
+        const  t = document.createTextNode(text);
+        bottun.appendChild(t);
+        document.getElementById('body').appendChild(bottun);
+    });
+};
 
 function mouseUpp() {
     let pNumber = Number(window.prompt('Type the number of squares you want in a row. Please be kind to chrome and keep it under 200', ' '))
@@ -55,9 +53,11 @@ function mouseOvver(e, color = 'RGB'+'(0, 0, 0)') {
 };
 
 function changeColor() {
-    let rColor = 'RGB' + '('(Math.floor(Math.random()*250) + ',' + Math.floor(Math.random()*250) + ',' + Math.floor(Math.random()*250)) + ')';
-    mouseOvver(rColor);
-    console.log(mouseOvver());
+    let rColor = 'RGB' + '('+(Math.floor(Math.random()*250) + ',' + Math.floor(Math.random()*250) + ',' + Math.floor(Math.random()*250)) + ')';
+    console.log(rColor);
+    document.getElementById('wrap').onmouseover = function(e) {
+        mouseOvver(e, rColor)
+    }
 };
 
 document.getElementById('wrap').onmouseover = function(e) {
@@ -69,5 +69,5 @@ document.getElementById('button0').onmouseup = function() {
 }
 
 document.getElementById('button1').onmouseup = function() {
-    changeColor();
+    changeColor()
 }
